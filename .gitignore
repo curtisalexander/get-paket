@@ -11,5 +11,9 @@ bin/
 obj/
 
 
+## nuget
+packages/
+
+
 ## paket
 paket-files
