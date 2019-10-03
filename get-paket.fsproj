@@ -4,6 +4,10 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <RootNamespace>get_paket</RootNamespace>
+    <PackAsTool>true</PackAsTool>
+    <ToolCommandName>get-paket</ToolCommandName>
+    <PackageOutputPath>./nupkg</PackageOutputPath>
+    <Version>0.0.1</Version>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Program.fs" />
