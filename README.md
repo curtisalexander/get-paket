@@ -1,15 +1,15 @@
 # get-paket
 
-Experiment with downloading files via [F#](https://fsharp.org/).
+Experiment with downloading files via [F#](https://fsharp.org/) as well as experimenting with consuming applications using [.NET Core Global Tools](https://docs.microsoft.com/en-us/dotnet/core/tools/global-tools).
 
 **Under construction.**
 :construction:
 
 ## Initial Approach
 
-Utilizes [FSharp.Data](https://fsharp.github.io/FSharp.Data/library/Http.html).
+Utilizes [FSharp.Data](https://fsharp.github.io/FSharp.Data/library/Http.html) for both the HTTP request as well as parsing returned JSON.
 
-### Build and Run
+### Build, Package, Install, and Run
 
 #### Clone
 
@@ -30,7 +30,7 @@ macOS version:
 10.14.6
 
 dotnet core version:
-3.0.100-preview9-014004
+3.0.100
 
 Package versions:
 Project 'get-paket' has the following package references
@@ -40,13 +40,39 @@ Project 'get-paket' has the following package references
    > FSharp.Data          3.1.1       3.1.1
 ```
 
+#### Package
+
+Update `fsproj` file by adding the following.
+
+
+```
+<PackAsTool>true</PackAsTool>
+<ToolCommandName>get-paket</ToolCommandName>
+<PackageOutputPath>./nupkg</PackageOutputPath>
+<Version>0.0.1</Version>
+```
+
+Next, create a NuGet package.
+
+```
+dotnet pack
+```
+
+#### Install
+
+Install as a global tool.
+
+```
+dotnet tool install nupkg/get-paket.0.0.1.nupkg -g
+```
+
 #### Run
 
 ```
-dotnet run
+cd root-directory && get-paket
 ```
 
-## Future Areas of Research
+## Other Approaches
 
 - Research using [HttpClient](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient?view=netcore-3.0) in lieu of [HttpWebRequest](https://docs.microsoft.com/en-us/dotnet/api/system.net.httpwebrequest?&view=netcore-3.0).
 
