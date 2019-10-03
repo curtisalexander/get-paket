@@ -84,11 +84,9 @@ cd root-directory && get-paket
 
 ## A Better Way
 
-A better way to manage may be as a global tool.
+A better way to manage [may be](https://gist.github.com/baronfel/80f49ecb93ebacb84ca840fca7a12fc2) to manage as a global/local tool.
 
-https://gist.github.com/baronfel/80f49ecb93ebacb84ca840fca7a12fc2
-
-#### Example Workflow
+#### Example Workflow to Use as a Local Tool
 
 Assumes have [.NET Core](https://dotnet.microsoft.com/download) installed.
 
