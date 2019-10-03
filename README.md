@@ -87,3 +87,48 @@ cd root-directory && get-paket
 A better way to manage may be as a global tool.
 
 https://gist.github.com/baronfel/80f49ecb93ebacb84ca840fca7a12fc2
+
+#### Example Workflow
+
+Assumes have [.NET Core](https://dotnet.microsoft.com/download) installed.
+
+Create directory
+
+```
+mkdir newapp
+```
+
+Create a local tool manifest.  This creates the file `.config/dotnet-tools.json`.
+
+```
+dotnet new tool-manifest
+```
+
+Install paket by running the following.  Note that it adds the latest version of paket to the `.config/dotnet-tools.json` file.
+
+```
+dotnet tool install paket
+```
+
+Now continue with a typical `paket` workflow.  Note, however, that there is no longer a `.paket` sub-directory within your application directory.
+
+Commands are now issued with `dotnet paket` rather than `paket.exe` or `mono .paket/paket.exe`.
+
+```
+dotnet paket init
+```
+
+Add a package.
+
+```
+dotnet paket add FSharp.Data
+```
+
+Install all packages.
+
+```
+dotnet paket install
+```
+
+Etc, etc, etc...
+
