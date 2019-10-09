@@ -82,6 +82,10 @@ cd root-directory && get-paket
 
 - Try to download the file with [async](https://github.com/curtisalexander/get-paket/blob/master/Program.fs#L88).
 
+- Use a [JSON type provider](https://fsharp.github.io/FSharp.Data/library/JsonProvider.html).
+    - Save and utilize local copy to get types for compilation and building
+    - During runtime, hit the actual repo
+
 ## A Better Way
 
 A better way to manage [may be](https://gist.github.com/baronfel/80f49ecb93ebacb84ca840fca7a12fc2) to manage as a global/local tool.
